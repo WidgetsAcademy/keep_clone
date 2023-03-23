@@ -8,11 +8,9 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        Container(
-          color: Colors.grey,
-          width: 200,
-          height: 70,
-        ),
+        AddNotesBar(onSubmitted: (value) {
+          print(value);
+        }),
         const Expanded(
           child: NotesGrid(),
         ),
