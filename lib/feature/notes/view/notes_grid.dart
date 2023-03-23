@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keep_clone/feature/notes/notes.dart';
 
 class NotesGrid extends StatelessWidget {
@@ -8,16 +9,15 @@ class NotesGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 3,
-      children: List.generate(
-        100,
-        (index) => NotesCard(
-          data: index.toString(),
-          onEdit: () {},
-          onDelete: () {},
-        ),
-      ),
-    );
+    return BlocBuilder<NotesListCubit, List<NoteModel>>(
+        builder: (context, notesList) {
+      return GridView.count(
+        crossAxisCount: 3,
+        children: notesList
+            .map((note) =>
+                NotesCard(data: note.data, onEdit: () {}, onDelete: () {}))
+            .toList(),
+      );
+    });
   }
 }

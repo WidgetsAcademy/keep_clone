@@ -22,8 +22,7 @@ class NotesCard extends StatelessWidget {
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: Text(
-                  'Card udtnrie uditre dtrn ueiadrn udiaertn dtrn dutriae dturia dtrrndtrndtruiaen ndturian dtuiren  nnumber $data'),
+              child: Text(data),
             ),
             Row(mainAxisAlignment: MainAxisAlignment.end, children: [
               IconButton(
