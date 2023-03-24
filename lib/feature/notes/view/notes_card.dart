@@ -17,23 +17,26 @@ class NotesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: Text(data),
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              IconButton(
-                icon: const Icon(Icons.delete),
-                onPressed: onDelete,
-              ),
-              IconButton(
-                icon: const Icon(Icons.edit),
-                onPressed: onEdit,
-              ),
-            ])
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: onDelete,
+                ),
+                IconButton(
+                  icon: const Icon(Icons.edit),
+                  onPressed: onEdit,
+                ),
+              ],
+            )
           ],
         ),
       ),

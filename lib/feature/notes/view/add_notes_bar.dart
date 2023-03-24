@@ -23,15 +23,16 @@ class _AddNotesBarState extends State<AddNotesBar> {
         Flexible(
           flex: 8,
           child: Container(
-            margin: const EdgeInsets.all(8.0),
-            padding: const EdgeInsets.all(8.0),
-            decoration: const ShapeDecoration(
-                color: Colors.grey,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12),
-                  ),
-                )),
+            margin: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
+            decoration: ShapeDecoration(
+              color: Colors.grey.withOpacity(0.4),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(12),
+                ),
+              ),
+            ),
             width: double.infinity,
             // height: 70,
             child: TextField(

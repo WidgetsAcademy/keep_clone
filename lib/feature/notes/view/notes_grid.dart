@@ -14,10 +14,19 @@ class NotesGrid extends StatelessWidget {
       return GridView.count(
         crossAxisCount: 3,
         children: notesList
-            .map((note) =>
-                NotesCard(data: note.data, onEdit: () {}, onDelete: () {}))
+            .map((note) => NotesCard(
+                data: note.data,
+                onEdit: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => UpdateNoteDialog(note: note),
+                  );
+                },
+                onDelete: () {
+                  context.read<NoteCubit>().delete(note.id);
+                },),)
             .toList(),
       );
-    });
+    },);
   }
 }

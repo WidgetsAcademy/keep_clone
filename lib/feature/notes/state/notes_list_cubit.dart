@@ -10,7 +10,7 @@ class NotesListCubit extends Cubit<List<NoteModel>> {
 
   final NotesRepository _repository;
 
-  StreamSubscription? _subscription;
+  StreamSubscription<List<NoteModel>>? _subscription;
 
   void init() {
     final initialData = _repository.getNotes();
