@@ -10,23 +10,28 @@ class NotesGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NotesListCubit, List<NoteModel>>(
-        builder: (context, notesList) {
-      return GridView.count(
-        crossAxisCount: 3,
-        children: notesList
-            .map((note) => NotesCard(
-                data: note.data,
-                onEdit: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) => UpdateNoteDialog(note: note),
-                  );
-                },
-                onDelete: () {
-                  context.read<NoteCubit>().delete(note.id);
-                },),)
-            .toList(),
-      );
-    },);
+      builder: (context, notesList) {
+        return GridView.count(
+          crossAxisCount: 3,
+          children: notesList
+              .map(
+                (note) => NotesCard(
+                  data: note.data,
+                  onEdit: () {
+                    // ignore: inference_failure_on_function_invocation
+                    showDialog(
+                      context: context,
+                      builder: (context) => UpdateNoteDialog(note: note),
+                    );
+                  },
+                  onDelete: () {
+                    context.read<NoteCubit>().delete(note.id);
+                  },
+                ),
+              )
+              .toList(),
+        );
+      },
+    );
   }
 }

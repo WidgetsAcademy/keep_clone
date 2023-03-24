@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class NotesCard extends StatelessWidget {
   const NotesCard({
-    super.key,
     required this.data,
     required this.onDelete,
     required this.onEdit,
+    super.key,
   });
 
   final String data;

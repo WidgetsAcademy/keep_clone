@@ -18,7 +18,10 @@ class InjectBusinessLogic extends StatelessWidget {
 }
 
 class InjectRepositories extends StatelessWidget {
-  const InjectRepositories({super.key, required this.child});
+  const InjectRepositories({
+    required this.child,
+    super.key,
+  });
   final Widget child;
 
   @override

@@ -4,8 +4,8 @@ import 'package:keep_clone/feature/notes/notes.dart';
 
 class UpdateNoteDialog extends StatefulWidget {
   const UpdateNoteDialog({
-    super.key,
     required this.note,
+    super.key,
   });
 
   final NoteModel note;

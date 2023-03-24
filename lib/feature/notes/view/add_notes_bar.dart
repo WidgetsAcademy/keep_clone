@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class AddNotesBar extends StatefulWidget {
   const AddNotesBar({
-    super.key,
     required this.onSubmitted,
+    super.key,
   });
 
-  final Function(String) onSubmitted;
+  final void Function(String) onSubmitted;
 
   @override
   State<AddNotesBar> createState() => _AddNotesBarState();
